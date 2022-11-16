@@ -1,3 +1,6 @@
 function getComputerChoice() {
-    cpuChoice = math.floor()
+    cpuChoices = ['Rock', 'Paper', 'Scissors'];
+    cpuMath = Math.floor(Math.random() * 3);
+    ans = cpuChoices[cpuMath];
+    return ans;
 }
