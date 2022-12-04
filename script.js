@@ -7,21 +7,42 @@ function getComputerChoice() {
 
 const compAns = getComputerChoice();
 
+
 function playerSelection() {
     plyChoice = prompt('Choice your fighter: rock, paper, or scissors!');
     ans2 = plyChoice.toLowerCase();
     let i = 0;
     while (ans2 != 'rock' && ans2 != 'paper' && ans2 != 'scissors') {
-        plyChoice = prompt('pick a damn option: rock, paper, or scissors!!!');
-        i++;
         if (i > 2) {
             return ("please try again and refresh the page");
-        } else if ((ans2 = "rock") || (ans2 = 'paper') || (ans2 = 'scissors')) {
+        }
+        i++;
+        plyChoice = prompt('pick a damn option: rock, paper, or scissors!!!');
+        ans2 = plyChoice.toLowerCase();
+         if ((ans2 === "rock") || (ans2 === 'paper') || (ans2 === 'scissors')) {
             break;
         }
     };
     return ans2;
 }
+
+
+
+// function playerSelection() {
+//     plyChoice = prompt('Choice your fighter: rock, paper, or scissors!');
+//     ans2 = plyChoice.toLowerCase();
+//     let i = 0;
+//     while (ans2 != 'rock' && ans2 != 'paper' && ans2 != 'scissors') {
+//         plyChoice = prompt('pick a damn option: rock, paper, or scissors!!!');
+//         i++;
+//         if (i > 2) {
+//             return ("please try again and refresh the page");
+//         } else if ((ans2 === "rock") || (ans2 === 'paper') || (ans2 === 'scissors')) {
+//             break;
+//         }
+//     };
+//     return ans2;
+// }
 
 const plyAns = playerSelection();
 
@@ -48,10 +69,19 @@ function playRound(plyAns, compAns) {
 function game() {
     for (let i = 0; i < 5; i++) {
         let d = 0;
-        let Loss = 0;
+        let l = 0;
         playRound();
         if (playRound() = 'Win') {
             d++;
+            alert("You Win! Play again");
+            playRound();
+        } else if (playRound() = "Loss") {
+            l++;
+            alert("You Lose! Try again");
+            playRound();
+        } else {
+            alert("something went wrong!");
+            break;
         }
     }
 }
