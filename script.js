@@ -5,8 +5,6 @@ function getComputerChoice() {
     return ans1;
 }
 
-const compAns = getComputerChoice();
-
 
 function playerSelection() {
     plyChoice = prompt('Choice your fighter: rock, paper, or scissors!');
@@ -14,8 +12,9 @@ function playerSelection() {
     let i = 0;
     while (ans2 != 'rock' && ans2 != 'paper' && ans2 != 'scissors') {
         if (i > 2) {
-            return ("please try again and refresh the page");
+            return "q";
         }
+
         i++;
         plyChoice = prompt('pick a damn option: rock, paper, or scissors!!!');
         ans2 = plyChoice.toLowerCase();
@@ -25,26 +24,6 @@ function playerSelection() {
     };
     return ans2;
 }
-
-
-
-// function playerSelection() {
-//     plyChoice = prompt('Choice your fighter: rock, paper, or scissors!');
-//     ans2 = plyChoice.toLowerCase();
-//     let i = 0;
-//     while (ans2 != 'rock' && ans2 != 'paper' && ans2 != 'scissors') {
-//         plyChoice = prompt('pick a damn option: rock, paper, or scissors!!!');
-//         i++;
-//         if (i > 2) {
-//             return ("please try again and refresh the page");
-//         } else if ((ans2 === "rock") || (ans2 === 'paper') || (ans2 === 'scissors')) {
-//             break;
-//         }
-//     };
-//     return ans2;
-// }
-
-const plyAns = playerSelection();
 
 function playRound(plyAns, compAns) {
     if (compAns === plyAns) {
@@ -67,28 +46,40 @@ function playRound(plyAns, compAns) {
 }
 
 function game() {
+    let d = 0;
+    let l = 0;
+    if ((playerSelection()) === "q") {
+        alert("Too many wrongs, refresh the page!");
+        return;
+    }
     for (let i = 0; i < 5; i++) {
-        let d = 0;
-        let l = 0;
-        playRound();
-        if (playRound() = 'Win') {
+        let compAns = getComputerChoice();
+        let plyAns = playerSelection();
+        if ((playRound(plyAns, compAns)) === 'Win') {
             d++;
             alert("You Win! Play again");
-            playRound();
-        } else if (playRound() = "Loss") {
+            if (d > 2) {
+                return "You won the game !"
+            }
+        } else if (playRound(plyAns, compAns) === "Loss") {
             l++;
             alert("You Lose! Try again");
-            playRound();
-        } else {
+            if (l > 2) {
+                return "You lose the game ! Wa Wa Wa."
+            }
+        } else if (playRound(plyAns, compAns) === "Tie Game") {
+            alert("Tie Round");
+            i--;
+        }
+        else {
             alert("something went wrong!");
             break;
         }
     }
 }
 
-console.log(compAns);
-console.log(plyAns);
-console.log(playRound(plyAns, compAns));
+
+console.log(game());
 
 
 
