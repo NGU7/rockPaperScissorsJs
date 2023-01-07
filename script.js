@@ -48,13 +48,13 @@ function playRound(plyAns, compAns) {
 function game() {
     let d = 0;
     let l = 0;
-    if ((playerSelection()) === "q") {
-        alert("Too many wrongs, refresh the page!");
-        return;
-    }
+    // if ((playerSelection()) === "q") {
+    //     alert("Too many wrongs, refresh the page!");
+    //     return;
+    // }
     for (let i = 0; i < 5; i++) {
         let compAns = getComputerChoice();
-        let plyAns = playerSelection();
+        // let plyAns = playerSelection();
         if ((playRound(plyAns, compAns)) === 'Win') {
             d++;
             alert("You Win! Play again");
@@ -78,11 +78,16 @@ function game() {
     }
 }
 
+const rob = document.querySelector('#Rock');
+rob.addEventListener("click", () => {
+    plyAns = "rock";
+    console.log(game())
+});
 
-console.log(game());
+console.log(rob);
 
 
-
+  
 /*
 function RPS() {
     if (compAns === plyAns) {

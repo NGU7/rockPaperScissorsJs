@@ -10,3 +10,9 @@ I plan to compare selections made using if and if else statements or using switc
 I plan to use a 'for' loop to keep track of how many times the game is played.
 I plan to use an incrementor variable to keep count of the scores.
 
+PT.2
+- I intent to create the css for the display first before adding the js to it
+- I plan to keep it simple with a "Choose your fighter!" centered at the top
+- I plan to have 3 selections ready between rock paper and scissors
+- and perhaps a display on the bottom updating depending on if you win or lose.
+
