@@ -5,25 +5,23 @@ function getComputerChoice() {
     return ans1;
 }
 
+const rock = document.querySelector('#rock');
+const rocker = rock.addEventListener('click', () => {
+    game('rock');
+    return;
+});
 
-function playerSelection() {
-    plyChoice = prompt('Choice your fighter: rock, paper, or scissors!');
-    ans2 = plyChoice.toLowerCase();
-    let i = 0;
-    while (ans2 != 'rock' && ans2 != 'paper' && ans2 != 'scissors') {
-        if (i > 2) {
-            return "q";
-        }
+const paper = document.querySelector('#paper');
+const pap = paper.addEventListener('click', () => {
+    game('paper');
+    return;
+});
 
-        i++;
-        plyChoice = prompt('pick a damn option: rock, paper, or scissors!!!');
-        ans2 = plyChoice.toLowerCase();
-         if ((ans2 === "rock") || (ans2 === 'paper') || (ans2 === 'scissors')) {
-            break;
-        }
-    };
-    return ans2;
-}
+const scissors = document.querySelector('#scissors');
+const sci = scissors.addEventListener('click', () => {
+    game('scissors');
+    return;
+});
 
 function playRound(plyAns, compAns) {
     if (compAns === plyAns) {
@@ -45,16 +43,11 @@ function playRound(plyAns, compAns) {
     }
 }
 
-function game() {
+function game(les) {
     let d = 0;
     let l = 0;
-    // if ((playerSelection()) === "q") {
-    //     alert("Too many wrongs, refresh the page!");
-    //     return;
-    // }
-    for (let i = 0; i < 5; i++) {
         let compAns = getComputerChoice();
-        // let plyAns = playerSelection();
+        let plyAns = les;
         if ((playRound(plyAns, compAns)) === 'Win') {
             d++;
             alert("You Win! Play again");
@@ -69,25 +62,32 @@ function game() {
             }
         } else if (playRound(plyAns, compAns) === "Tie Game") {
             alert("Tie Round");
-            i--;
+            
         }
         else {
             alert("something went wrong!");
-            break;
         }
-    }
-}
+    };
+//}
 
-const rob = document.querySelector('#Rock');
-rob.addEventListener("click", () => {
-    plyAns = "rock";
-    console.log(game())
-});
 
-console.log(rob);
+
+
 
 
   
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 function RPS() {
     if (compAns === plyAns) {
